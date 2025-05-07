@@ -101,5 +101,6 @@ def detect_patterns(pt1, pt2, win_size, data, time, plot):
     mask[ind2remove] = False
     filtered_data = data[mask]
     filtered_time = time[mask]
+    bad_window_indices = np.where((event_flags == 2) | (event_flags == 3))[0]
 
-    return filtered_data, filtered_time
+    return filtered_data, filtered_time, bad_window_indices

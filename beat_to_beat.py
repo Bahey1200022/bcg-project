@@ -12,7 +12,7 @@ def compute_rate(beats, time, mpd):
         for i in range(0, indices.size - 1):
             peak_to_peak = np.append(peak_to_peak, time[indices[i + 1]] - time[indices[i]])
         mean_heart_rate = np.average(peak_to_peak, axis=0)
-        bpm_avg = 1000 * (60 / mean_heart_rate)
+        bpm_avg =1000*(60 / mean_heart_rate)
         return np.round(bpm_avg, decimals=2), indices
     else:
         return 0.0, 0.0
